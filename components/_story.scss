@@ -1,0 +1,53 @@
+.story{
+    width:75%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 3rem 6rem rgba(0,0,0,0.1);
+    border-radius: 3px;
+    padding: 8rem 0;
+    font-size: $default-font-size;
+    padding-left:7rem;
+    transform: skewX(-12deg);
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside:circle(50% at 50% 50%); //
+        shape-outside: circle(50% at 50% 50%); //to make the content flow around(radius[50% of width and height=7.5rem] at position of center of the circle)
+        //shape outside works only with float, width and height[]compulsory
+        -webkit-clip-path:circle(50% at 50% 50%);
+        clip-path:circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+    }
+    &__image{
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s;
+    }
+    &__text{
+        transform: skewX(12deg);
+    }
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,20%);
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+    &:hover &__caption{
+        transform: translate(-50%,-50%);
+        opacity: 1;
+    }
+    &:hover &__image{
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%)  //in brightness value above 100%makes it brighter and value below 100% makes it darker 
+ }
+}

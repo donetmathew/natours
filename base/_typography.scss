@@ -1,0 +1,35 @@
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, rgba(137, 226, 144, 0.801),
+    rgba(40, 180, 133, 0.801));
+    display: inline-block;
+    background-clip: text; //to clip the back image only in text
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all .2s;
+    @include respond(tab_portrait){
+        font-size: 2.5rem;
+    }
+    @include respond(phone){
+        font-size: 2rem;
+    }
+    &:hover{
+        transform:skewY(2deg) skewX(2deg) scale(1.1); //skew is used to tilting to a particular degree
+        text-shadow: 0.5rem 0.9rem 2rem rgba(0, 0, 0, 0.2) ///adds shadow to text
+    }
+}
+
+.heading-tertiary{
+    font-size:$default-font-size;
+    font-weight:700;
+    text-transform: uppercase;
+}
+
+.paragraph{
+    font-size:$default-font-size;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}

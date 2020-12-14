@@ -1,0 +1,79 @@
+.btn{
+    &,
+    &:link,
+    &:visited{
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1rem;
+        display: inline-block;
+        margin-top: 6rem;
+        transition: all 0.2s;;
+        position: relative;
+        color: black;
+
+        //Change for button element
+        border: none;
+
+    }
+    &:hover{
+        transform: translateY(-.3rem);
+        box-shadow: 0rem 2rem 2rem rgba(0,0,0,.2);
+        &::after{
+            transform: scaleX(1.4) scaleY(1.5);
+            opacity: 0;
+        }
+    }
+    &:active{
+        transform: translateY(-.1rem);
+        box-shadow: 0rem 1rem 1rem rgba(0,0,0,.2); //h-offset v-offset blur spreadcolor
+    
+    }
+    &--white{
+        background-color: white;
+        color:#777;
+        border-radius: 2.7rem;
+        &::after{
+            background-color: white;
+        }
+    }
+    &::after{
+        content:"";
+        display: inline-block;
+        width: 100%;    /* relative to parent which is btn */
+        height: 100%;   /* relative to parent which is btn */
+        top:0;
+        left:0;
+        z-index: -1;
+        position: absolute; /* relative to parent which is btn and to move it behind the btn, hence made btn relative*/
+        border-radius: 2.7rem;
+        transition: all 0.2s; /*transition always given to initial state */
+    
+    }
+    &--animated{
+        animation: moveFromBottom 0.5s ease-out 0.3s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        text-decoration: none;
+        padding: 6px 15px 6px 15px;
+        border-bottom: 1px solid rgba(40, 180, 133, 0.801);
+        display: inline-block;
+        animation: all 0.2s;
+        }
+    &:active{
+        transform: translateY(-.1rem);  //not wrking currently
+        box-shadow: 0rem 1rem 1rem rgba(0,0,0,.2);
+    }
+
+    &:hover{
+        background-color: rgba(40, 180, 133, 0.801);
+        color: white;
+        box-shadow: 0rem 1rem 1rem rgba(0,0,0,.2);
+        transform: translateY(-.3rem);
+    }
+
+}

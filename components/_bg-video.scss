@@ -1,0 +1,17 @@
+.bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+    opacity: 0.15;
+    overflow: hidden; /// to hide the video which was going out due to object-fit
+
+    &__content{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; //fill the entire parent element
+
+    }
+}
